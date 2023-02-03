@@ -1,0 +1,6 @@
+"0","# ALL SAMPLES:"
+"0","ggplot(data = subset(hgm_subject_df, !is.na(hgm_subject_df$bin_5yrCutoff)), aes(x = bin_5yrCutoff)) +"
+"0","geom_bar(fill = ""grey"", color = ""black"") +"
+"0","geom_text(stat='count', aes(label=..count..), vjust=-0.5, color=""red"") +"
+"0","xlab(""Age Range (years)"") +"
+"0","ggtitle(""5 year cutoff for all subjects"")"

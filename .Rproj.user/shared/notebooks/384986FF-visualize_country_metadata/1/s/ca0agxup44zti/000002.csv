@@ -1,0 +1,3 @@
+"0","# country_frequency <- as.data.frame(table(dataset21and22$country))"
+"0",""
+"0","country_frequency_SRM_present <- as.data.frame(table(subset(dataset21and22$country, dataset21and22$SRM_present == TRUE)))"

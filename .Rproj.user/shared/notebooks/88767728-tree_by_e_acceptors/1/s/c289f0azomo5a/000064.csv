@@ -1,0 +1,13 @@
+"0","# with dplyr"
+"0","# tree_plot %<+%"
+"0","#   otu_eacceptor_sources +"
+"0","#   geom_point2(aes(color = sulfate), na.rm = FALSE)"
+"0",""
+"0","subset_esources <- subset(otu_eacceptor_sources, (otu_eacceptor_sources$OTU %in% dsl_subset_tree$tip.label)==TRUE)"
+"0",""
+"0","# heatmap"
+"0","gheatmap(dsl_tree_plot_lower, subset_esources[,2:4], color = ""white"") +"
+"0","  scale_fill_manual(breaks=c(""yes"", ""no"", NA), values=c(""red"", ""blue"", ""green""), name = ""electron source"")"
+"2","Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the existing
+scale.
+"

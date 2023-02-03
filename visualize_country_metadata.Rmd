@@ -1,0 +1,113 @@
+---
+title: "visualize_country"
+output: html_document
+---
+
+# create country_frequency df from dataset21and22$country
+```{r}
+# country_frequency <- as.data.frame(table(dataset21and22$country))
+
+country_frequency_SRM_present <- as.data.frame(table(subset(dataset21and22$country, dataset21and22$SRM_present == TRUE)))
+```
+
+# Bar chart of countries by number of samples
+# all samples
+```{r}
+# separate bar charts for number of sample ranges / bins
+
+# library(ggplot2)
+
+ggplot(data = subset(country_frequency, country_frequency$Freq > 500), aes(y = reorder(Var1, Freq), x = Freq)) + 
+  geom_bar(stat = "identity", fill = "light blue") +
+  geom_text(aes(label = Freq), colour = "black", size = 3) +
+  xlab("Number of Samples") +
+  ylab("Country") +
+  theme_light() +
+  ggtitle("Number of Samples / Country (samples > 500)")
+
+ggplot(data = subset(country_frequency, 500 > country_frequency$Freq & country_frequency$Freq > 100), aes(y = reorder(Var1, Freq), x = Freq)) + 
+  geom_bar(stat = "identity", fill = "light blue") +
+  geom_text(aes(label = Freq), colour = "black", size = 3) +
+  xlab("Number of Samples") +
+  ylab("Country") +
+  theme_light() +
+  ggtitle("Number of Samples / Country (500 > samples > 100)")
+
+ggplot(data = subset(country_frequency, 100 > country_frequency$Freq & country_frequency$Freq > 10), aes(y = reorder(Var1, Freq), x = Freq)) + 
+  geom_bar(stat = "identity", fill = "light blue") +
+  geom_text(aes(label = Freq), colour = "black", size = 3) +
+  xlab("Number of Samples") +
+  ylab("Country") +
+  theme_light() +
+  ggtitle("Number of Samples / Country (100 > samples > 10)")
+
+ggplot(data = subset(country_frequency, 10 > country_frequency$Freq), aes(y = reorder(Var1, Freq), x = Freq)) + 
+  geom_bar(stat = "identity", fill = "light blue") +
+  geom_text(aes(label = Freq), colour = "black", size = 3) +
+  xlab("Number of Samples") +
+  ylab("Country") +
+  theme_light() +
+  ggtitle("Number of Samples / Country (10 > samples)")
+
+
+```
+
+
+# bar chart of countries by number of samples for SRM present
+```{r}
+ggplot(data = country_frequency_SRM_present, aes(y = reorder(Var1, Freq), x = Freq)) + 
+  geom_bar(stat = "identity", fill = "light blue") +
+  geom_text(aes(label = Freq), colour = "black", size = 3) +
+  xlab("Number of Samples") +
+  ylab("Country") +
+  theme_light() +
+  ggtitle("Number of Samples with SRM present / Country")
+```
+
+```{r}
+# create country code column 
+library(countrycode)
+
+for (n_row in 1:nrow(country_frequency_SRM_present)) {
+  country_frequency_SRM_present[n_row, "code"] <- countrycode(country_frequency_SRM_present[n_row, "Var1"], origin="country.name", destination="iso3c")
+}
+
+```
+
+```{r}
+# calculate log of frequency values and add to new column in country_frequency
+country_frequency$"log10(Freq+1)" <- log(country_frequency$Freq + 1, 10)
+
+```
+
+
+```{r}
+# Heatmap of worldmap by number of samples
+library(rworldmap)
+
+mapped_data <- joinCountryData2Map(country_frequency, joinCode = "ISO3", nameJoinColumn = "code")
+
+
+mapCountryData(mapped_data, nameColumnToPlot = "Freq", catMethod = "logFixedWidth", mapTitle = "Heatmap of Number of Samples (log transformation)")
+
+mapCountryData(mapped_data, nameColumnToPlot = "Freq", catMethod = "fixedWidth", mapTitle = "Heatmap of Number of Samples")
+
+# determine catMethod: logFixedWidth, fixedWidth, or pretty?
+
+# plot log-plus-one transformation of Freq
+# mapped_data <- joinCountryData2Map(country_frequency, joinCode = "ISO3", nameJoinColumn = "code")
+# mapCountryData(mapped_data, nameColumnToPlot = "log10(Freq+1)")
+
+# the plots look the same .....
+
+# for samples with SRM
+mapped_data_SRM_present <- joinCountryData2Map(country_frequency_SRM_present, joinCode = "ISO3", nameJoinColumn = "code")
+
+
+mapCountryData(mapped_data_SRM_present, nameColumnToPlot = "Freq", catMethod = "logFixedWidth", mapTitle = "Heatmap of Number of Samples w/ SRM (log transformation) ")
+
+mapCountryData(mapped_data_SRM_present, nameColumnToPlot = "Freq", catMethod = "fixedWidth", mapTitle = "Heatmap of Number of Samples w/ SRM")
+
+```
+
+

@@ -1,0 +1,3 @@
+"0","# calculate log of frequency values and add to new column in country_frequency"
+"0","country_frequency$""log10(Freq+1)"" <- log(country_frequency$Freq + 1, 10)"
+"0",""

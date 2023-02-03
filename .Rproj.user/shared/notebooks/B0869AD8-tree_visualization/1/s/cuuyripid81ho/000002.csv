@@ -1,0 +1,19 @@
+"0","### ROOTED QUERY TREE BY CLADE ###"
+"0",""
+"0","library(ggtree)"
+"0","library(dplyr)"
+"0","library(ggplot2)"
+"0","library(ape)"
+"2","
+Attaching package: ‘ape’
+
+"
+"2","The following object is masked from ‘package:ggtree’:
+
+    rotate
+
+"
+"0","firmicutes_node = MRCA(rooted_result_tree, c('Seine_river_floodplain_clone_VO10__Bq8Rive8', ""Hot_spring_clone_BSP-102__HotSpr15""))"
+"2","Error in MRCA(rooted_result_tree, c(""Seine_river_floodplain_clone_VO10__Bq8Rive8"",  : 
+  object 'rooted_result_tree' not found
+"

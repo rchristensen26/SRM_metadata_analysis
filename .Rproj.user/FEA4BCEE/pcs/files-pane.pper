@@ -1,0 +1,13 @@
+{
+    "path" : "~/Desktop/Cremer_Lab_2022/dsrAB_Biosample_Metadata_Analysis",
+    "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 2
+        }
+    ]
+}

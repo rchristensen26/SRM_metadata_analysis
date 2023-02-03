@@ -1,0 +1,21 @@
+"0","# Heatmap of worldmap by number of samples"
+"0","library(rworldmap)"
+"2","### Welcome to rworldmap ###
+"
+"2","For a short introduction type : 	 vignette('rworldmap')
+"
+"0","# all subejcts"
+"0","mapped_data <- joinCountryData2Map(country_frequency_bySubject, joinCode = ""ISO3"", nameJoinColumn = ""code"")"
+"1","24"
+"1"," "
+"1","codes from your data successfully matched countries in the map
+"
+"1","0"
+"1"," "
+"1","codes from your data failed to match with a country code in the map
+"
+"1","219"
+"1"," "
+"1","codes from the map weren't represented in your data
+"
+"0","mapCountryData(mapped_data, nameColumnToPlot = ""Freq"", catMethod = ""logFixedWidth"", mapTitle = ""Heatmap of Number of Subjects (log transformation)"")"

@@ -1,0 +1,5 @@
+"0","ref_tree = read.tree(""/Users/rebeccachristensen/Desktop/Cremer_Lab_2022/main/workflow/out/raxmlOutputFinal/RAxML_originalLabelledTree_noBootstrap.newick"")"
+"0",""
+"0","out_group = as.vector(archaeaRootsetIDs$X1)"
+"0",""
+"0","rooted_ref_tree <-root(ref_tree, c(""Moorella_thermoacetica_Y72_copy_2__MooTher5""), r = TRUE)"

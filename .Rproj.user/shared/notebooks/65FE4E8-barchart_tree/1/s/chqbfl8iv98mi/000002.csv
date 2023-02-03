@@ -1,0 +1,2 @@
+"0","tip_glom_cluster_sums$subj_perc <- (tip_glom_cluster_sums$subject_sum / sum(hgm_subject_df$SRM_present == T)) * 100"
+"0","tip_glom_cluster_sums$sample_perc <- (tip_glom_cluster_sums$sample_sum / sum(sum(dataset21and22_withNayfachData_distanceFiltered$SRM_present == T))) * 100"

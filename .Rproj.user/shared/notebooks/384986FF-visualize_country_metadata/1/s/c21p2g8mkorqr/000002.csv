@@ -1,0 +1,7 @@
+"0","ggplot(data = country_frequency_SRM_present, aes(y = reorder(Var1, Freq), x = Freq)) + "
+"0","  geom_bar(stat = ""identity"", fill = ""light blue"") +"
+"0","  geom_text(aes(label = Freq), colour = ""black"", size = 3) +"
+"0","  xlab(""Number of Samples"") +"
+"0","  ylab(""Country"") +"
+"0","  theme_light() +"
+"0","  ggtitle(""Number of Samples with SRM present / Country"")"

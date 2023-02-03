@@ -1,0 +1,6 @@
+"0","# working df: df"
+"0",""
+"0","df$merged_subject_id <- ifelse(df$merged_project_accession == ""PRJNA301903"","
+"0","                               as.integer(df$merged_subject_id),"
+"0","                               df$merged_subject_id)"
+"2","NAs introduced by coercion"

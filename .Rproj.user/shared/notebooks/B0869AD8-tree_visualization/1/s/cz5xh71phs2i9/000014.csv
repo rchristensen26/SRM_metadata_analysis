@@ -1,0 +1,7 @@
+"0","# unclassified_nodes <- c(""Rice_field_soil_clone_Bu-23__JN615148"", ""uncultured_bacterium__EF645666"", ""uncultured_bacterium__EF645667"", ""uncultured_bacterium__EF645664"", ""uncultured_bacterium__EF645665"", ""uncultured_bacterium__EF645666"", ""Bioreactor_clone__UncS2028"", ""Termite_protist_endosymbiont_community_metagenome__entry118"", ""Polluted_aquifer_clone__UncS1623"", ""MSW_digester_clone__Unc01cxc"", ""Anaerobic_bacterium_sk.prop8__Bv2Prop2"", ""Anaerobic_bacterium_EtOH8__Bv2EtOH2"", ""Deep_sea_sediment_clone__JN798931"", ""Bioreactor_clone__UncS2029"", ""Arctic_sediment_clone_AH5_5__AtcSed67"", ""Pearl_river_estuary_clone_TopDSR14__UncS2036"", ""Polluted_aquifer_clone_LGWK16__UncS1633"")"
+"0",""
+"0","for (node in unclassified_nodes) {"
+"0","  tree <- tree +  geom_cladelabel(node = MRCA(hits_only_tree, node), label = ""unclassified bacteria"", fontsize = 2, color = ""dark grey"")"
+"0","}"
+"0",""
+"0","tree"

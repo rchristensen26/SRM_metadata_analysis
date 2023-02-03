@@ -1,0 +1,5 @@
+"0","library(seqinr)"
+"0",""
+"0","# write.fasta(sequences = as.list(tnaA_sequences), names = tnaA_names, file.out = ""tnaA_K01677_genes.faa"")"
+"0","write.fasta(sequences = as.list(tnaA_mgene_sequences), names = tnaA_mgene_names, file.out = ""tnaA_K01677_referenceGenes_mgenes.faa"")"
+"0",""

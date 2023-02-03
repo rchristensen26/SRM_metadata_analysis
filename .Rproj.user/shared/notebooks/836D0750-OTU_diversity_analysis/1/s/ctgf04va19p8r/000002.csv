@@ -1,0 +1,7 @@
+"0",""
+"0","ggplot(data = species_nSamples, aes(y = reorder(`Closest characterized/named species`, n_samples), x = n_samples, label = n_samples)) +"
+"0","  geom_bar(stat = ""identity"", fill = ""white"", color = ""grey"") +"
+"0","  geom_text(hjust = 0.3, color = ""black"", size = 3) +"
+"0","  ylab(""Closest characterized/named species"") +"
+"0","  xlab(""number of samples"") +"
+"0","  ggtitle(""N Samples / Characterized Species"")"

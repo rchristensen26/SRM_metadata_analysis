@@ -1,0 +1,7 @@
+"0",""
+"0","ggsave(""Tree_Plots/desulfovibrionaceae_tree_plot_upperHalf.png"", dsl_tree_plot_upper, height = 2000, units = ""px"")"
+"2","Saving 2188 x 2000 px image
+"
+"2","Error in grDevices::dev.off() : 
+  QuartzBitmap_Output - unable to open file 'Tree_Plots/desulfovibrionaceae_tree_plot_upperHalf.png'
+"

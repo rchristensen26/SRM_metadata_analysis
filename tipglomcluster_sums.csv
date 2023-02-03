@@ -1,0 +1,24 @@
+,Cluster,Total_subjects,Total_samples,Grouping
+1,Archaeoglobus sulfaticallidus,2,3,Archaeoglobus cluster
+2,Bilophila wadsworthia,772,1136,Desulfovibrionaceae
+3,Desulfitibacter alkalitolerans,153,244,Firmicutes group
+4,Desulfitobacterium hafniense,6,11,Firmicutes group
+5,Desulfosporosinus youngiae,3,4,Firmicutes group
+6,Desulfovibrio carbinoliphilus,1,3,Desulfovibrionaceae
+7,Desulfovibrio desulfuricans,1,1,Desulfovibrionaceae
+8,Desulfovibrio desulfuricans and Desulfovibrio simplex cluster,277,391,Desulfovibrionaceae
+9,Desulfovibrio piger,219,295,Desulfovibrionaceae
+10,Desulfovibrio vulgaris,52,78,Desulfovibrionaceae
+11,Gordonibacter pamelaeae,84,144,Firmicutes group
+12,Thermodesulfobium narugense,15,19,Firmicutes group
+13,uncultured bacterium from aquifer,1,1,Firmicutes group
+14,uncultured bacterium from rice field,1,1,Environmental supercluster 1
+15,uncultured bacterium from termite protist,5,5,Desulfovibrionaceae
+16,uncultured Desulfovibrio sp.,49,80,Desulfovibrionaceae
+17,uncultured Firmicute from aquifer,1,1,Firmicutes group
+18,uncultured Firmicute from arctic sediment,1,1,Firmicutes group
+19,uncultured Firmicute from bioreactor,4,6,Firmicutes group
+20,uncultured Firmicute from deep sea sediment,2,3,Firmicutes group
+21,uncultured Firmicute from digester,17,25,Firmicutes group
+22,uncultured Firmicute from estuary,2,2,Firmicutes group
+23,uncultured Firmicute from industrial environment,168,266,Firmicutes group

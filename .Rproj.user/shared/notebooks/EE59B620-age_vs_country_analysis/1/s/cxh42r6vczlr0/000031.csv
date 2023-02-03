@@ -1,0 +1,7 @@
+"0",""
+"0","ggplot(data = subset(dataset21and22, !is.na(dataset21and22$country) & !is.na(dataset21and22$age_years) & (dataset21and22$country == c(""USA"", ""Sweden"", ""Spain"", ""Singapore"", ""Russia"", ""Luxembourg"", ""Finland"", ""Fiji"", ""Estonia"", ""Denmark"", ""China"", ""Austria""))), aes(x = age_years, y = country, color = SRM_present)) +"
+"0","  geom_boxplot() +"
+"0","  xlab(""Age in years"") +"
+"0","  ggtitle(""Age distribution by country for countries w/ SRM"") +"
+"0","  scale_x_continuous(breaks = seq(0,80, 10))"
+"2","longer object length is not a multiple of shorter object length"

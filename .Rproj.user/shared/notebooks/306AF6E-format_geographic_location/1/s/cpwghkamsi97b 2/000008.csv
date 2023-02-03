@@ -1,0 +1,7 @@
+"0","# add country info from geographic location column"
+"0",""
+"0","# create new country column with ""NA"" values"
+"0","as.character(practice_dataset$country) <- NA"
+"2","Error in as.character(practice_dataset$country) <- NA : 
+  could not find function ""as.character<-""
+"

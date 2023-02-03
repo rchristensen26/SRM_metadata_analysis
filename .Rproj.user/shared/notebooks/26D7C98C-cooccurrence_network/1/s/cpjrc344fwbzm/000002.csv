@@ -1,0 +1,35 @@
+"0","library(GGally)"
+"2","Loading required package: ggplot2
+"
+"2","Registered S3 method overwritten by 'GGally':
+  method from   
+  +.gg   ggplot2
+"
+"0","library(network)"
+"2","
+‘network’ 1.18.0 (2022-10-05), part of the Statnet Project
+* ‘news(package=""network"")’ for changes since last version
+* ‘citation(""network"")’ for citation information
+* ‘https://statnet.org’ for help, support, and other information
+
+"
+"0","library(sna)"
+"2","Loading required package: statnet.common
+"
+"2","
+Attaching package: ‘statnet.common’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    attr, order
+
+"
+"2","sna: Tools for Social Network Analysis
+Version 2.7 created on 2022-05-09.
+copyright (c) 2005, Carter T. Butts, University of California-Irvine
+ For citation information, type citation(""sna"").
+ Type help(package=""sna"") to get started.
+
+"
+"0","library(ggplot2)"

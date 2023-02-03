@@ -1,0 +1,17 @@
+"","hit_id","query_id","biosample_id","closest_ref","distance","SRM_present"
+"1","ORNV01.27706.1_2/27-293","ORNV01","SAMEA2338686","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.19116949008691,TRUE
+"2","UZQP01.55993.1_1/54-161","UZQP01","SAMN00792028","['Anaerobic_bacterium_sk.prop8__Bv2Prop2', 'Archaeoglobus_sulfaticallidus__ArgSulfa']",NA,TRUE
+"3","ORNG01.9965.1_2/27-293","ORNG01","SAMEA2338711","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.10478449008691,TRUE
+"4","ORMN01.20534.1_1/1-170","ORMN01","SAMEA2338770","['Archaeoglobus_sulfaticallidus__ArgSulfa']",1.89775068665234,TRUE
+"5","CABREB01.115.1_6/26-290","CABREB01","SAMEA5850677","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.50273649008691,TRUE
+"6","OQCL01.6784.1_2/27-293","OQCL01","SAMD00036316","['Archaeoglobus_sulfaticallidus__ArgSulfa']",6.85276449008691,TRUE
+"7","OVMJ01.79597.1_1/52-221","OVMJ01","SAMN06016415","['Archaeoglobus_sulfaticallidus__ArgSulfa']",1.55805104693707,TRUE
+"8","UXRF01.56957.1_1/1-142","UXRF01","SAMEA2162844","['Archaeoglobus_sulfaticallidus__ArgSulfa']",1.22502363268779,TRUE
+"9","CABRLZ01.41.1_10/28-291","CABRLZ01","SAMEA5851220","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.57683549008691,TRUE
+"10","CAADVN01.204.1_4/28-291","CAADVN01","SAMEA5279426","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.76061249008691,TRUE
+"11","JAHZGB01.25.1_77/584-831","JAHZGB01","SAMN19225113","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.71636449008691,TRUE
+"12","OOYY01.37298.1_1/16-276","OOYY01","SAMEA2042981","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.17930249008691,TRUE
+"13","CAJLUU01.40.1_4/28-291","CAJLUU01","SAMEA7847243","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.76061249008691,TRUE
+"14","CAAEUZ01.115.1_6/26-290","CAAEUZ01","SAMEA5279161","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.50273649008691,TRUE
+"15","CAJJMA01.49.1_14/41-298","CAJJMA01","SAMEA7846718","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.93360349008691,TRUE
+"16","OVLU01.19630.1_1/27-293","OVLU01","SAMN06016414","['Archaeoglobus_sulfaticallidus__ArgSulfa']",7.20883949008691,TRUE

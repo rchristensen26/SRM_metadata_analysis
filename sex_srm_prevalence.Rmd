@@ -1,0 +1,22 @@
+---
+title: "sex_srm_prevalence"
+output: html_document
+---
+# Albert: It looks odd that the general SRMM prevalence is 31%, 
+# but the prevalence of either males or females is only 21%. 
+# Why is that? Is sex data more often available for non-infants?
+```{r}
+library(ggplot2)
+
+df <- hgm_subject_df
+
+ggplot(df, aes(x = age_years, fill = is.na(sex_all))) +
+  geom_histogram()
+
+ggplot(df, aes(x = age_years, fill = is.na(sex_all))) +
+  geom_boxplot()
+
+
+
+```
+# conclusion: The demographic of subjects in which data on sex is available is more skewed towards infants that the entire subject pool. This is a likely explanation for why the prevalence of SRM in subjects with sex data is 21%, while overall it is 30%. 

@@ -1,0 +1,8 @@
+"0",""
+"0","# tree_plot_allLabels <- ggtree(firmicutes_subset_tree, layout = ""circular"") +"
+"0","# geom_tiplab(size = 2, align = TRUE)"
+"0","# tree_plot_allLabels %>%"
+"0","#   collapse(node = upperFirmNode) +"
+"0","#   geom_point2(aes(subset=(node==upperFirmNode)), shape=23, size=3, fill='red')"
+"0",""
+"0","viewClade(tree_plot, upperFirmNode)"

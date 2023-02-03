@@ -1,0 +1,47 @@
+---
+title: "sex_metadata"
+output: html_document
+---
+
+# create new "sex_all" column
+```{r}
+dataset21and22$sex_all <- NA
+dataset21and22$sex_all <- as.character(dataset21and22$sex_all)
+```
+
+
+# merge columns for "host sex" and "sex" to "sex_all" column
+```{r}
+
+# iterate by row
+# damn this is slow...
+column_name <- "sex"
+
+for (n_row in 1:nrow(dataset21and22)) {
+  # check that value exists for "host sex"
+  if (!is.na(dataset21and22[n_row,column_name])) {
+    if (dataset21and22[n_row,column_name] != "pooled male and female") {
+      dataset21and22[n_row, "sex_all"] <- dataset21and22[n_row, column_name]
+    }
+  }
+}
+
+sum(!is.na(dataset21and22$sex_all))
+
+```
+
+# visualization of sex for SRM present group
+``` {r}
+ggplot(data = subset(dataset21and22, !is.na(dataset21and22$sex_all)), aes(x = sex_all, fill = SRM_present)) +
+  geom_bar() +
+  xlab("sex") +
+  ggtitle("Number of Samples by Sex") +
+  geom_text(stat='count', aes(label=..count..), vjust=-0.5, color="black")
+
+ggplot(data = subset(dataset21and22, !is.na(dataset21and22$sex_all)), aes(x = SRM_present, fill = sex_all)) +
+  geom_bar(position = "fill") +
+  ggtitle("Proportion of male and female samples by SRM Presence")
+
+# RESULT: no significant difference in sex bewteen SRM present or absent groups
+```
+

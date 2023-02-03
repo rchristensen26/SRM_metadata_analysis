@@ -1,0 +1,8 @@
+"0",""
+"0","# Samples with SRM:"
+"0","# bin: 5 year cutoff"
+"0","ggplot(data = subset(dataset21and22, !is.na(dataset21and22$bin_5yrCutoff) & dataset21and22$SRM_present == TRUE), aes(x = bin_5yrCutoff)) +"
+"0","geom_bar(fill = ""grey"", color = ""black"") +"
+"0","geom_text(stat='count', aes(label=..count..), vjust=-0.5, color=""red"") +"
+"0","xlab(""Age Range (years)"") +"
+"0","ggtitle(""Sample Ages: 5 year cutoff for SRM Present samples"")"

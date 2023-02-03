@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1673027711905.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3670231128",
+    "id" : "33C09561",
+    "lastKnownWriteTime" : 1673028267,
+    "last_content_update" : 1673028267408,
+    "path" : "~/Desktop/Cremer_Lab_2022/dsrAB_Biosample_Metadata_Analysis/major_cluster_subjectsums.Rmd",
+    "project_path" : "major_cluster_subjectsums.Rmd",
+    "properties" : {
+        "cursorPosition" : "15,17",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

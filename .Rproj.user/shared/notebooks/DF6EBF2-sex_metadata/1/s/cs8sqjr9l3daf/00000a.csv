@@ -1,0 +1,4 @@
+"0",""
+"0","ggplot(data = subset(dataset21and22, !is.na(dataset21and22$sex_all)), aes(x = SRM_present, fill = sex_all)) +"
+"0","  geom_bar(position = ""fill"") +"
+"0","  ggtitle(""Proportion of male and female samples by SRM Presence"")"

@@ -1,0 +1,6 @@
+"0","# summary(cooccur.subjectOTU)"
+"0","# prob.table(cooccur.subjectOTU)"
+"0","plot(cooccur.subjectOTU)"
+"2","Error in ans[ypos] <- rep(yes, length.out = len)[ypos] : 
+  replacement has length zero
+"

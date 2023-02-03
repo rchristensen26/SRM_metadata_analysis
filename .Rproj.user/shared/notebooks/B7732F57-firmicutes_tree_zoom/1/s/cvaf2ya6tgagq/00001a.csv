@@ -1,0 +1,11 @@
+"0","# using viewClade function"
+"0","# firmicutes_node <- MRCA(tree, ""Gordonibacter_pamelaeae__GrdPame5"", ""Polluted_aquifer_clone_LGWK16__UncS1633"")"
+"0","# tree_plot <- ggtree(tree) +"
+"0","# #   geom_tiplab(aes(subset= label %in% closest_ref_leaves), size = 2, align = TRUE)"
+"0","# viewClade(tree_plot, firmicutes_node)"
+"0",""
+"0","# using tree_subset function"
+"0","firmicutes_subset_tree <- tree_subset(tree, ""Gordonibacter_pamelaeae__GrdPame5"", levels_back = 7)"
+"2","Error in UseMethod(""tree_subset"") : 
+  no applicable method for 'tree_subset' applied to an object of class ""phyloseq""
+"

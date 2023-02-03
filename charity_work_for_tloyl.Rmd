@@ -1,0 +1,128 @@
+---
+title: "charity_work_for_tloyl"
+output: html_document
+---
+
+# DESCRIPTION
+# My task and ultimate goal is to analyze the co-occurence of 55 bacterial species within a cohort of 1000+ subjects. There's a (supposedly) convenient package in R, cooccur, that calculates the probabilistic species cooccurrence of species pairs from a simple site by species (or species by site) matrix as the input. In this case, each "site" is a subject. Starting an excel spreadsheet of the site-species matrix, this markdown file will walk you through the steps needed to apply the cooccur function.
+
+# packages to install
+```{r}
+library(cooccur)
+library(xlsx)
+```
+
+# read in the excel spreadsheet as a site-species matrix
+```{r}
+# details on the spreadsheet:
+# - Row names are in column 1. Each row represents a subject. There are 1,294 subjects/sites/rows.
+# - Column names are in row 1. Each column represents a species. There are 55 species.
+# - Cell values are binary. Zero (0) indicates the species was NOT identified in that subject. One (1) indicates the species was identified in that subject. This is presence/absence data, not species abundance. 
+
+subject_OTU_matrix <- read.xlsx2("subject_OTU_matrix.xlsx", row.names=1, sheetIndex = 1, colClasses = c("character", rep("numeric", 54)), endRow = 1295)
+View(subject_OTU_matrix)
+```
+
+# (attempted/failed) cooccurrence analysis
+```{r}
+# Let's test out the cooccur function with a subset of the site-species matrix. 
+subject_OTU_matrix <- subject_OTU_matrix[1:9,1:3]
+
+subject_OTU_matrix_transposed <- t(subject_OTU_matrix)
+
+# and now for the cooccur function...
+cooccur.subjectOTU <- cooccur(mat=subject_OTU_matrix_transposed, spp_names = T)
+```
+
+# let's look at results!
+```{r}
+# summary(cooccur.subjectOTU)
+# prob.table(cooccur.subjectOTU)
+plot(cooccur.subjectOTU)
+```
+
+# making new species-subject matrix, transferring OTU-level data to to species-level (to the best of my ability lol)
+```{r}
+# blank subject-species matrix (species level instead of OTU level)
+subject_species_matrix <- matrix(data = 0,
+       nrow = nrow(subject_OTU_matrix),
+       ncol = length(unique(OTU_species_table$`90% nt cluster`)))
+
+rownames(subject_species_matrix) <- (rownames(subject_OTU_matrix))
+colnames(subject_species_matrix) <- c(unique(OTU_species_table$`90% nt cluster`))
+
+# adding data! woo! :|
+
+# testing with mini df
+# subject_species_matrix <- subject_species_matrix[1:10, 1:10]
+# subject_OTU_matrix <- subject_OTU_matrix[1:10, 1:10]
+# colnames(subject_species_matrix)
+
+# for (species in colnames(subject_species_matrix)) {
+#   OTUs <- (subset(OTU_species_table$OTU, OTU_species_table$species == species))
+#   # OTUs <- colnames(subject_OTU_matrix)
+#   for (OTU in OTUs) {
+#     subject_species_matrix[,species] <- ifelse((subject_OTU_matrix[,OTU] == 1 &
+#                                                        subject_species_matrix[,species] == 0),
+#                                                      1,
+#                                                      0)
+#   }
+# }
+
+# uhh ok im just gonna iterate by row ..........
+
+for (species in colnames(subject_species_matrix)) {
+  OTUs <- (subset(OTU_species_table$OTU, OTU_species_table$`90% nt cluster` == species))
+  
+  for (n_row in 1:nrow(subject_species_matrix)) {
+    for (OTU in OTUs) {
+      if (subject_OTU_matrix[n_row, OTU] == 1) {
+        subject_species_matrix[n_row, species] <- 1
+      }
+    }
+  }
+}
+
+```
+
+# species-level cooccurrence
+```{r}
+subject_species_matrix_transposed <- t(subject_species_matrix)
+
+# subsetting the df to take out some species with <20 observations 
+species_to_exclude <- c("Desulfitobacterium hafniense", "Desulfovibrio desulfuricans cluster 3", "Thermodesulfobium narugense", "unclassified Firmicute Unc01cxc", "Archaeoglobus sulfaticallidus", "Desulfovibrio desulfuricans cluster 2")
+species_to_include <- setdiff(rownames(subject_species_matrix_transposed), species_to_exclude)
+subject_species_matrix_transposed_subset <- subject_species_matrix_transposed[rownames(subject_species_matrix_transposed) %in% species_to_include,]
+cooccur.subjectSpecies <- cooccur(mat=subject_species_matrix_transposed_subset, spp_names = T)
+
+# summary(cooccur.subjectSpecies)
+# prob.table(cooccur.subjectSpecies)
+
+# plot(cooccur.subjectOTU)
+# plot(cooccur.subjectSpecies) + 
+#   theme(legend.position = c(0.93, 0.5), plot.title = element_text(size=15), legend.text=element_text(size=10))
+  
+```
+
+# number of observations (sites/subjects w/ pos for each species) from subejct_species_matrix
+```{r}
+
+# species_occurrence_table <- matrix(ncol= 1, nrow = ncol(subject_species_matrix))
+# rownames(species_occurrence_table) <- colnames(subject_species_matrix)
+# colnames(species_occurrence_table) <- "n_observations"
+# 
+# 
+# species_occurrence_table$"n_observations" <- ifelse()
+# 
+
+
+species_occurrence_table <- subject_species_matrix_transposed_subset
+
+species_occurrence_table %>% 
+  mutate(n_subjects = colSums(.))
+
+View(species_occurrence_table)
+
+```
+
+

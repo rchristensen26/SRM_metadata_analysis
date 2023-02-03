@@ -1,0 +1,7 @@
+"0","tree %<+%"
+"0","  otu_all_table +"
+"0","  geom_point2(aes(color = logFreq, subset = Freq > 0)) +"
+"0","  scale_color_gradient(low = ""blue"", high = ""orange"", name = """") +"
+"0","  # guides(color = ""none"") +"
+"0","  theme(legend.position = c(0.09, 0.85), legend.key.size = unit(0.5, ""cm""),legend.title = element_text(size=6)) +"
+"0","  geom_treescale(x = 0.09, y = 30, width = 0.5, fontsize = 3, color = ""darkgray"")"

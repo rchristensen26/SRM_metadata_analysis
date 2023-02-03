@@ -1,0 +1,6 @@
+"0","ggplot(subset(dataset, dataset$`n_leaf-level_OTUs` != 0), aes(x = as.factor(`n_leaf-level_OTUs`))) +"
+"0","  geom_bar() +"
+"0","  geom_text(stat='count', aes(label=..count..), vjust=-0.5, color=""red"") +"
+"0","  ggtitle(""Number of Samples by Number of Leaf-Level OTUs"") +"
+"0","  xlab(""Number of Leaf-Level OTUs"") +"
+"0","  ylab(""Number of Samples"")"

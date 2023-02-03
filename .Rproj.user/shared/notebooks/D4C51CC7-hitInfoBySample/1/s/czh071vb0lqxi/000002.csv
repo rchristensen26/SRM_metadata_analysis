@@ -1,0 +1,3 @@
+"0","sample_metadata_hitInfo_joined_02$total_taxon_hits <- rowSums(sample_metadata_hitInfo_joined_02[,378:ncol(sample_metadata_hitInfo_joined_02)])"
+"0",""
+"0","# that was a lot easier than i thought it would be..."

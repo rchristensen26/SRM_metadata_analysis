@@ -1,0 +1,8 @@
+"0",""
+"0","# as a proportion"
+"0","ggplot(data = subset(subject_df, !is.na(subject_df$bin_5yrCutoff)), aes(x = bin_5yrCutoff, fill = SRM_present)) +"
+"0","geom_bar(position = ""fill"") +"
+"0","xlab(""Age Bin (years)"") +"
+"0","ggtitle(""SRM Presence vs. age: 5 year cutoff as a porportion"") +"
+"0","  ylab(""proportion"")"
+"0",""

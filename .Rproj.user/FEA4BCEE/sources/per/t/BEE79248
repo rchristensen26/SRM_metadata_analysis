@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1671228076729.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BEE79248",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1671228076729,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "AC84B2D8",
+        "caption" : "dataset21and22_withNayfachData",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dataset21and22_withNayfachData&cache_key=AC84B2D8",
+        "displayedObservations" : 72501,
+        "environment" : "",
+        "expression" : "dataset21and22_withNayfachData",
+        "object" : "dataset21and22_withNayfachData",
+        "preview" : 0,
+        "totalObservations" : 72501,
+        "variables" : 472
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

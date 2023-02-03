@@ -1,0 +1,8 @@
+"0",""
+"0","ggplot(data = genus_n_subjects, aes(y = reorder(Genus, n_subjects), x = n_subjects, label = n_subjects)) +"
+"0","  geom_bar(stat = ""identity"", fill = ""white"", color = ""grey"") +"
+"0","  geom_text(hjust = 0.3, color = ""black"", size = 3) +"
+"0","  ylab(""genus"") +"
+"0","  xlab(""number of subjects"") +"
+"0","  ggtitle(""Number of Subjects / genus"")"
+"0",""

@@ -1,0 +1,5 @@
+"0","# reset country column to all NAs (character type)"
+"0",""
+"0","dataset$country <- NA"
+"0","dataset$country <- as.character(dataset$country)"
+"0",""

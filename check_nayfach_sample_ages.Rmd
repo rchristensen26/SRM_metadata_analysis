@@ -1,0 +1,135 @@
+---
+title: "Nayfach_age_metadata"
+output: html_document
+---
+
+# check the age/ host age data for samples contained in the Nayfach project (PRJEB31003)
+```{r}
+# Nayfach_sample_list <- PRJEB31003_biosampleList_Nayfach$X1
+
+# setdiff(Nayfach_sample_list, sample_metadata_hitInfo_joined$sample_id)
+# damn. all but one of the samples in the Nayfach list are in the sample_metadata. sample not present in metadata: SAMEA5278321
+# doesn't matter much anywhooooo
+# next: check ages for samples from Nayfach project
+
+# nayfach_sample_df <- subset(dataset, dataset$sample_id %in% Nayfach_sample_list)
+# nayfach_sample_df <- nayfach_sample_df[,c("sample_id", "age", "host age")]
+# View(nayfach_sample_df)
+
+# let's take a look at the samples in the Nayfach project 
+length(intersect(Nayfach_sample_list, dataset21and22$sample_id))
+# 2057 samples from Nayfach project are in the dataset
+
+View(subset(dataset21and22, dataset21and22$sample_id %in% Nayfach_sample_list))
+
+# OKAY WOO I FOUND 
+# no need to scream. I found the column name / variable with sample info to tie the sample_id in the dataset to the Nayfach supp table 3: `sample derived from` (dataset) = `sample_accession` (supp table 3)
+```
+
+# time to add the age data from supp table 3 to the dataset!
+# dataset is the working dataset
+# ^ replica of dataset21and22
+```{r}
+# first, how many of the samples are represented in supp table 3? (and therefore have age data)
+# length(intersect(dataset$`sample derived from`, Nayfach_SuppTable3_ageData$sample_accession))
+# 971. jesus cristo. 
+
+# now to add the age info to the working dataset! .........
+# should we iterate? is there an easier way?
+# ugh ok we're just gonna iterate for now ...
+
+# n = 0
+# for (n_row in dataset) {
+#   if (!is.na(dataset[n_row, "sample derived from"])){
+#     n = n+1
+#   }
+# }
+# 
+# print(n)
+
+# haha damn that's slow. let's try using dplyr instead
+# stop resisting rebecca
+
+# first, let's merge the datasets using join
+# dataset21and22$sample_accession <- dataset21and22$`sample derived from`
+# nayfach_joined <-  left_join(dataset21and22, Nayfach_SuppTable3_ageData, by="sample_accession", suffix = c("", "_nayfach"))
+
+# next, let's check how many samples from the dataset have nayfach data on age, country, and sex
+print("age")
+sum(!is.na(nayfach_joined$age_years))
+sum(!is.na(nayfach_joined$age_nayfach))
+sum(!is.na(nayfach_joined$age_nayfach) & is.na(nayfach_joined$age_years))
+print("country")
+sum(!is.na(nayfach_joined$country))
+sum(!is.na(nayfach_joined$country_nayfach))
+sum(!is.na(nayfach_joined$country_nayfach) & is.na(nayfach_joined$country))
+print("sex")
+sum(!is.na(nayfach_joined$sex_all))
+sum(!is.na(nayfach_joined$gender))
+sum(!is.na(nayfach_joined$gender) & is.na(nayfach_joined$sex_all))
+
+# View(table(dataset$age_nayfach))
+# View(table(dataset$country_nayfach))
+# View(table(dataset$gender))
+
+# plan:
+# all values for age_nayfach can be directly added to the age_years column
+# check that values for country and country_nayfach match
+# all values for gender can be added directly to sex_all, except! "Female" must be added as "female", and "Male" must be added as "male
+```
+
+# merge "age", "country", and "sex"
+```{r}
+# replace "Female" and "Male" in gender column with "female" and "male"
+
+# Nayfach_SuppTable3_ageData$gender[Nayfach_SuppTable3_ageData$gender == "Female"] <- "female"
+# Nayfach_SuppTable3_ageData$gender[Nayfach_SuppTable3_ageData$gender == "Male"] <- "male"
+
+# dataset$sample_accession <- dataset$`sample derived from`
+# dataset <- left_join(dataset, Nayfach_SuppTable3_ageData, by = c("sample_accession", "sex_all", "country", "age_years"), suffix = c("", "_nayfach"))
+# View(dataset)
+
+print("age")
+sum(!is.na(dataset21and22$age_years))
+sum(!is.na(dataset$age_years))
+print("country")
+sum(!is.na(dataset21and22$country))
+sum(!is.na(dataset$country))
+print("sex")
+sum(!is.na(dataset21and22$sex_all))
+sum(!is.na(dataset$sex_all))
+```
+# this didn't work
+# i'm just going back to the original plan and iterating by row...
+
+# add age, country, and sex data by row
+```{r}
+
+# make joined df by sample_accession
+
+# nayfach_joined <- left_join(dataset, Nayfach_SuppTable3_ageData, by = "sample_accession", suffix = c("", "_nayfach"))
+
+for (n_row in 1:nrow(nayfach_joined)) {
+  if (!is.na(nayfach_joined[n_row, "country_nayfach"])){
+    if (is.na(nayfach_joined[n_row, "country"])) {
+      nayfach_joined[n_row, "country"] <- nayfach_joined[n_row, "country_nayfach"]
+    }
+  }
+  if (!is.na(nayfach_joined[n_row, "age_years_nayfach"])){
+    nayfach_joined[n_row, "age_years"] <- nayfach_joined[n_row, "age_years_nayfach"]
+  }
+  if (!is.na(nayfach_joined[n_row, "sex_all_nayfach"])){
+    nayfach_joined[n_row, "sex_all"] <- nayfach_joined[n_row, "sex_all_nayfach"]
+  }
+}
+
+# expected age: 7753
+print(paste("age:", sum(!is.na(nayfach_joined$age_years))))
+# expected country: 67777
+print(paste("country:", sum(!is.na(nayfach_joined$country))))
+# expected sex: 5912
+print(paste("sex:", sum(!is.na(nayfach_joined$sex_all))))
+
+# IT WORKED!!!!!!
+```
+

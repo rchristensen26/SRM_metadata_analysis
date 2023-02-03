@@ -1,0 +1,8 @@
+"0",""
+"0","ggplot(data = genus_nSamples, aes(y = reorder(Genus, n_samples), x = n_samples, label = n_samples)) +"
+"0","  geom_bar(stat = ""identity"", fill = ""white"", color = ""grey"") +"
+"0","  geom_text(hjust = 0.3, color = ""black"", size = 3) +"
+"0","  ylab(""genus"") +"
+"0","  xlab(""number of samples"") +"
+"0","  ggtitle(""N samples / genus"")"
+"0",""

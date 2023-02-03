@@ -1,0 +1,7 @@
+"0","# assemblyLevel_variables <- c(""assembly_method"","
+"0","# ""assembly quality"","
+"0","# ""assembly"","
+"0","# ""Assembly Method"","
+"0","# ""assembly_method"")"
+"0",""
+"0","View(table(subject_df[,assemblyLevel_variables[5]]))"

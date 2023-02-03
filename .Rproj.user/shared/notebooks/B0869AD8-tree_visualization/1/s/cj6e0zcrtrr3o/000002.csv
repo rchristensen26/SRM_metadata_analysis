@@ -1,0 +1,7 @@
+"0",""
+"0","# gheatmap(rtree, data= otu_subj_mat, offset = -0.35, width = 0.5, legend_title = ""Number of Hits \n (log plus one)"", colnames = FALSE, low = ""blue"", high = ""orange"", color = ""transparent"") +"
+"0","#   labs(fontsize = 4) +"
+"0","#   theme(legend.position = c(1, 0.25), legend.key.size = unit(0.45, ""cm""))"
+"0",""
+"0","desulfovibrionaceae_node = MRCA(ref_tree, c('Mariager_Fjord_clone_MAF65G__Af2Fjo18', ""Bioreactor_clone__UncS2021""))"
+"0","viewClade(ref_tree, desulfovibrionaceae_node)"

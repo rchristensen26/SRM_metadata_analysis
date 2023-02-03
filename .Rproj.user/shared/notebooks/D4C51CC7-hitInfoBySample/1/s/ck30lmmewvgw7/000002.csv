@@ -1,0 +1,3 @@
+"0","# first, rename the tot_species column in the old df to total_taxon_hits"
+"0",""
+"0","rename(sample_metadata_2021, total_taxon_hits = tot_species)"

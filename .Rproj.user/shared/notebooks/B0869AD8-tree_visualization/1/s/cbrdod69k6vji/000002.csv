@@ -1,0 +1,54 @@
+"0","## ADD REFERENCE TREE TIP LABELS TO REF_TABLE FOR HEATMAP ##"
+"0",""
+"0","library(ggtree)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","tree <- ref_tree"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"2","Found more than one class ""phylo"" in cache; using the first, from namespace 'phyloseq'
+"
+"2","Also defined by ‘tidytree’
+"
+"0","tips_list <- as.list(tree$tip.label)"
+"0",""
+"0","for (tip in tips_list) {"
+"0","  if(!(tip %in% rooted_ref_table$closest_ref2)) {"
+"0","    newrow <- c(tip, 0, tip)"
+"0","    rooted_ref_table <- rbind(rooted_ref_table, newrow)"
+"0","  }"
+"0","}"
+"2","Error in tip %in% rooted_ref_table$closest_ref2 : 
+  object 'rooted_ref_table' not found
+"

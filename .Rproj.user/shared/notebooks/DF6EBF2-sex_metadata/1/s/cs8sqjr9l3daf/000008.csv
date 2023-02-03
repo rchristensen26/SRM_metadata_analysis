@@ -1,0 +1,5 @@
+"0","ggplot(data = subset(dataset21and22, !is.na(dataset21and22$sex_all)), aes(x = sex_all, fill = SRM_present)) +"
+"0","  geom_bar() +"
+"0","  xlab(""sex"") +"
+"0","  ggtitle(""Number of Samples by Sex"") +"
+"0","  geom_text(stat='count', aes(label=..count..), vjust=-0.5, color=""black"")"

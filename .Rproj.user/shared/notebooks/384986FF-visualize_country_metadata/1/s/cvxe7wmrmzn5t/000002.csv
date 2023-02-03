@@ -1,0 +1,17 @@
+"0","# Heatmap of worldmap by number of samples"
+"0","library(rworldmap)"
+"0",""
+"0","mapped_data <- joinCountryData2Map(country_frequency, joinCode = ""ISO3"", nameJoinColumn = ""code"")"
+"1","111"
+"1"," "
+"1","codes from your data successfully matched countries in the map
+"
+"1","2"
+"1"," "
+"1","codes from your data failed to match with a country code in the map
+"
+"1","133"
+"1"," "
+"1","codes from the map weren't represented in your data
+"
+"0","mapCountryData(mapped_data, nameColumnToPlot = ""Freq"", catMethod = ""logFixedWidth"", mapTitle = ""Heatmap of Number of Samples (log transformation)"")"

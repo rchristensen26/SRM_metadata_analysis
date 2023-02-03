@@ -1,0 +1,16 @@
+"0",""
+"0","# for subjects with SRM"
+"0","mapped_data_SRM_present <- joinCountryData2Map(country_frequency_SRM_present_bySubject, joinCode = ""ISO3"", nameJoinColumn = ""code"")"
+"1","14"
+"1"," "
+"1","codes from your data successfully matched countries in the map
+"
+"1","0"
+"1"," "
+"1","codes from your data failed to match with a country code in the map
+"
+"1","229"
+"1"," "
+"1","codes from the map weren't represented in your data
+"
+"0","mapCountryData(mapped_data_SRM_present, nameColumnToPlot = ""Freq"", catMethod = ""logFixedWidth"", mapTitle = ""Heatmap of Number of Subjects w/ SRM (log transformation) "")"

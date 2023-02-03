@@ -1,0 +1,5 @@
+"0","THRESHOLD = 90"
+"0",""
+"0","select_ref_blast_threshold <- subset(ref_blast_percid, perc_id > THRESHOLD & subject_id != query_id)"
+"0",""
+"0","write.xlsx(select_ref_blast_threshold, ""select_ref_blast_96_threshold_nuc.xlsx"")"

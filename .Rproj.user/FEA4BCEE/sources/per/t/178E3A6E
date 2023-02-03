@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1670455559478.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "673376635",
+    "id" : "178E3A6E",
+    "lastKnownWriteTime" : 1670894950,
+    "last_content_update" : 1671054813310,
+    "path" : "~/Desktop/Cremer_Lab_2022/dsrAB_Biosample_Metadata_Analysis/barchart_tree.Rmd",
+    "project_path" : "barchart_tree.Rmd",
+    "properties" : {
+        "cursorPosition" : "4,0",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

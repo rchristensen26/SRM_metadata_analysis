@@ -1,0 +1,6 @@
+"0","phytree <- as.phylo(tree)"
+"0","# phytree"
+"0","plot_tree(phytree, ""treeonly"")"
+"2","Error in setkeyv(x, cols, verbose = verbose, physical = physical) : 
+  some columns are not in the data.table: V2
+"

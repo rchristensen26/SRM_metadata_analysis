@@ -1,0 +1,8 @@
+"0",""
+"0","ggplot(data = subset(country_frequency, 10 > country_frequency$Freq), aes(y = reorder(Var1, Freq), x = Freq)) + "
+"0","  geom_bar(stat = ""identity"", fill = ""light blue"") +"
+"0","  geom_text(aes(label = Freq), colour = ""black"", size = 3) +"
+"0","  xlab(""Number of Samples"") +"
+"0","  ylab(""Country"") +"
+"0","  theme_light() +"
+"0","  ggtitle(""Number of Samples / Country (10 > samples)"")"
